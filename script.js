@@ -80,15 +80,62 @@ function startClock() {
   animateSecondHand();
 }
 // Function to update hour and minute hands based on real time
+// function updateHourAndMinuteHands() {
+//   const now = new Date();
+//   const berlinTime = new Date(
+//     now.toLocaleString("en-US", {
+//       timeZone: "Europe/Berlin"
+//     })
+//   );
+//   const hours = berlinTime.getHours() % 12;
+//   const minutes = berlinTime.getMinutes();
+//   const hourHand = document.getElementById("hour-hand");
+//   const minuteHand = document.getElementById("minute-hand");
+//   if (hourHand && minuteHand) {
+//     const hoursDegrees = hours * 30 + (minutes / 60) * 30;
+//     const minutesDegrees = minutes * 6;
+//     hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+//     minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+//   }
+//   // Update date display with simple month and day format
+//   const dateDisplay = document.getElementById("clock-date");
+//   if (dateDisplay) {
+//     const months = [
+//       "Jan",
+//       "Feb",
+//       "Mar",
+//       "Apr",
+//       "May",
+//       "Jun",
+//       "Jul",
+//       "Aug",
+//       "Sep",
+//       "Oct",
+//       "Nov",
+//       "Dec"
+//     ];
+//     const month = months[berlinTime.getMonth()];
+//     const day = berlinTime.getDate();
+//     dateDisplay.textContent = `${month} ${day}`;
+//   }
+//   // Update timezone display
+//   const timezoneDisplay = document.getElementById("clock-timezone");
+//   if (timezoneDisplay) {
+//     timezoneDisplay.textContent = "Berlin";
+//   }
+//   // Update hour and minute hands every minute
+//   setTimeout(updateHourAndMinuteHands, 60000);
+// }
+
 function updateHourAndMinuteHands() {
   const now = new Date();
-  const berlinTime = new Date(
+  const myanmarTime = new Date(
     now.toLocaleString("en-US", {
-      timeZone: "Europe/Berlin"
+      timeZone: "Asia/Yangon"
     })
   );
-  const hours = berlinTime.getHours() % 12;
-  const minutes = berlinTime.getMinutes();
+  const hours = myanmarTime.getHours() % 12;
+  const minutes = myanmarTime.getMinutes();
   const hourHand = document.getElementById("hour-hand");
   const minuteHand = document.getElementById("minute-hand");
   if (hourHand && minuteHand) {
@@ -114,14 +161,14 @@ function updateHourAndMinuteHands() {
       "Nov",
       "Dec"
     ];
-    const month = months[berlinTime.getMonth()];
-    const day = berlinTime.getDate();
+    const month = months[myanmarTime.getMonth()];
+    const day = myanmarTime.getDate();
     dateDisplay.textContent = `${month} ${day}`;
   }
   // Update timezone display
   const timezoneDisplay = document.getElementById("clock-timezone");
   if (timezoneDisplay) {
-    timezoneDisplay.textContent = "Berlin";
+    timezoneDisplay.textContent = "Myanmar";
   }
   // Update hour and minute hands every minute
   setTimeout(updateHourAndMinuteHands, 60000);
